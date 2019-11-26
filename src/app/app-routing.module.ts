@@ -10,6 +10,8 @@ import { ResponseResetComponent } from './components/password/response-reset/res
 import { AfterLoginService } from './services/auth/after-login.service';
 import { BeforeLoginService } from './services/auth/before-login.service';
 
+import { IndexIndexComponent } from './index-index/index-index.component';
+
 const appRoutes: Routes = [
   {
     path: 'login',
@@ -20,6 +22,11 @@ const appRoutes: Routes = [
     path: 'signup',
     component: SignupComponent,
     canActivate: [BeforeLoginService]
+  },
+  {
+    path: 'index',
+    component: IndexIndexComponent,
+    canActivate: [AfterLoginService]
   },
   {
     path: 'profile',
